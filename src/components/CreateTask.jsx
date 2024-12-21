@@ -7,8 +7,13 @@ const CreateTask = ({ addTask }) => {
   };
 
   const addingTask = () => {
+    const newTask={
+      id:Date.now(),
+      taskName:task,
+      isDone:false
+    }
     if(task === "") return;
-    addTask(task);
+    addTask(newTask);
     setTask("");
   };
   const onKeyPressHandler = (e) => {
