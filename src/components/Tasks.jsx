@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import TodoContext from "../context/TodoContext";
 
-const Tasks = ({ task:{id,taskName,isDone}, deleteTask,doneTask}) => {
+const Tasks = ({ task:{id,taskName,isDone}}) => {
+  const {deleteTask,doneTask} = useContext(TodoContext) ;
   const handleDone = () => {
     doneTask(id);
   }

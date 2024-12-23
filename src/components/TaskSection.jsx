@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Tasks from "./Tasks";
+import TodoContext from "../context/TodoContext";
 
-const TaskSection = ({ tasks, deleteTask,doneTask }) => {
+const TaskSection = () => {
+  const { tasks, deleteTask, doneTask } = useContext(TodoContext);
   return (
     <>
       
@@ -11,7 +13,7 @@ const TaskSection = ({ tasks, deleteTask,doneTask }) => {
         <h1>Done List -{tasks.filter((t) => t.isDone).length}</h1>
       </div>
         {tasks.map((task) => {
-          return <Tasks key={task.id} task={task} deleteTask={deleteTask} doneTask={doneTask} />;
+          return <Tasks key={task.id} task={task}  />;
         })}
       </div>
     </>

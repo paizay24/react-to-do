@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import TodoContext from "../context/TodoContext";
 
-const CreateTask = ({ addTask }) => {
+const CreateTask = () => {
+const {addTask} = useContext(TodoContext);
   const [task, setTask] = useState("");
   const onChangeHandler = (e) => {
     setTask(e.target.value);
